@@ -10,10 +10,10 @@ pipeline {
                 sh 'gradle builed --info'
             }
         }
-    }
-    stage('Test') {
+        stage('Test') {
             steps {
                 sh 'gradle test --info'
             }
         }
+    }
 }
