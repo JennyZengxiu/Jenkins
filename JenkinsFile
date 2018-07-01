@@ -1,3 +1,7 @@
+node{
+    def gradleHome = tool 'Gradle 4.8.1'
+    env.PATH = "${gradleHome}/bin:${env.PATH}"
+}
 pipeline {
     agent any
     stages {
@@ -7,4 +11,9 @@ pipeline {
             }
         }
     }
+    stage('Test') {
+            steps {
+                sh 'gradle test --info'
+            }
+        }
 }
